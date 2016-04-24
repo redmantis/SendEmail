@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "主页";
+}
+
+<h2>@ViewBag.Message</h2>
+<p>
+
+    <form id="form1" runat="server" action="/home/Sendmail" method="post" enctype="multipart/form-data">
+        <div>
+            <table style="width: 800px;">
+                <tr>
+                    <td style="width: 80%">
+                        <table style="width: 100%">
+                            <tr>
+                                <td>发件人
+                                </td>
+                                <td>
+                                    <input name="txtfrom" type="text" value="" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>收件人
+                                </td>
+                                <td>
+                                    <input name="txtTo" type="text" value="feiyufly001@hotmail.com;179911014@qq.com" />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>抄送人
+                                </td>
+                                <td>
+                                    <input name="txtCc" type="text" value="1774542368@qq.com" />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>主题
+                                </td>
+                                <td>
+                                    <input name="txtTitle" type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>内容
+                                </td>
+                                <td>
+                                    <input name="txtContent" type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>附件  
+                                </td>
+                                <td>
+                                    <p id="FileList">
+                                        <input name="File" type="file" id="upfile_0"  onchange="checkfile(this,0);" />
+
+                                    </p>
+                                    <input type="button" value="增加附件" class="ButtonCss" onclick="addFile()" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" colspan="2">
+                                    <input id="Button1" type="submit" value="发送" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" colspan="2"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="vertical-align: top;">
+                        <ul>
+                            <li>
+                                <input id="Checkbox1" type="checkbox" />学员一
+                            </li>
+                            <li>
+                                <input id="Checkbox1" type="checkbox" />学员二
+                            </li>
+                        </ul>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</p>
