@@ -187,7 +187,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Content\uploadfile.css" />
     <Content Include="Content\uploadfile.custom.css" />
-    <Content Include="demo.html" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\home\fileupload.js" />
@@ -243,13 +242,12 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="packages.config" />
-    <None Include="readme.txt" />
     <Content Include="Views\Home\Sendmail.cshtml" />
     <None Include="Service References\BeidouService\Service.wsdl" />
-    <Content Include="Views\Email\Index.cshtml" />
     <Content Include="Views\Email\Sendmail.cshtml" />
     <Content Include="Views\AsyncMail\Index.cshtml" />
     <Content Include="Views\AsyncMail\Sendmail.cshtml" />
+    <Content Include="Views\Email\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -265,6 +263,10 @@
     <ProjectReference Include="..\mailbox\EmailHelper.csproj">
       <Project>{5862e549-e2ca-4831-beea-55b1ef710cbf}</Project>
       <Name>EmailHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Smtp.Mailer\Smtp.Mailer.csproj">
+      <Project>{641cbead-07e3-4cd7-8e38-9e8d7dd32b72}</Project>
+      <Name>Smtp.Mailer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

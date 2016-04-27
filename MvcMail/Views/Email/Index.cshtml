@@ -5,7 +5,7 @@
 <h2>@ViewBag.Message</h2>
 <p>
 
-    <form id="form1" runat="server" action="/Email/Sendmail" method="post" enctype="multipart/form-data">
+    <form id="form1" action="/Email/Sendmail" method="post" enctype="multipart/form-data">
         <div>
             <table style="width: 800px;">
                 <tr>
@@ -60,27 +60,42 @@
                             </tr>
                             <tr>
                                 <td align="center" colspan="2">
-                                    <input id="Button1" type="submit" value="发送" />
+                                    <input id="guid" name="guid" type="hidden"  value="@ViewBag.guid" />
+                                    <input id="btnAjaxSubmit" type="button" value="发送" />
+                                    @*<input id="Button1" type="submit" value="发送" />*@
                                 </td>
                             </tr>
                             <tr>
-                                <td align="center" colspan="2"></td>
+                                <td align="center" colspan="2"><textarea id="TextAreamsage" rows="2" cols="20" style="display:none"></textarea></td>
                             </tr>
                         </table>
                     </td>
                     <td style="vertical-align: top;">
-                        <div style="height:360px; overflow-y:scroll;  width:200px;">
-                            <ul>
-                                @foreach (System.Data.DataRow row in Model.Tables[0].Rows)
-                                {
-                                    <li>
-                                        @Html.CheckBox("selmember", false, new { Value = row["id"] }) @row["username"]
-                                    </li>
-                                }
+    <table>
+        <tr>
+        <td><input id="selectAll" type="checkbox" />全</td>
+        <td class="ischeckid">等待发送</td>
+        <td class="sendok">发送完毕</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div style="height:360px; overflow-y:scroll;  width:200px;">
 
-                            </ul>
-                        </div>
-                    </td>
+                    <ul id="memberlist">
+                        @foreach (System.Data.DataRow row in Model.Tables[0].Rows)
+                        {
+                            <li>
+                                @Html.CheckBox("selmember", false, new { Value = row["id"], @class = "mblist" }) @row["username"]
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </table>
+</td>
+
                 </tr>
             </table>
         </div>

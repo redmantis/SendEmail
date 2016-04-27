@@ -1,5 +1,5 @@
 ﻿var maxsize = 10 * 1024 * 1024;//2M
-var errMsg = "上传的附件文件不能超过2M！！！";
+var errMsg = "上传的附件文件不能超过10M！！！";
 var tipMsg = "您的浏览器暂不支持计算上传文件的大小，确保上传文件不要超过10M，建议使用IE、FireFox、Chrome浏览器。";
 var browserCfg = {};
 var ua = window.navigator.userAgent;
@@ -56,14 +56,6 @@ function addFile() {
 
     }
 }
-
-function findSize(field_id) {
-    var fileInput = $("#" + field_id)[0];
-    byteSize = fileInput.files[0].fileSize;
-    return (Math.ceil(byteSize / 1024)); // Size returned in KB.
-}
-
-
 
 var ajaxcount = 0;
 var timehandle;
